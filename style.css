@@ -49,7 +49,6 @@
     position: relative;
     overflow: hidden;
     height: 70vh;
-    width: 56vh;
     border-radius: 0.5rem; /* Tailwind rounded equivalent */
 }
 .slider {
@@ -80,12 +79,82 @@
         typing 4.5s steps(40, end),
         blink-caret .80s step-end infinite;
 }
+.button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+  background: #44cf70;
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    margin-top: 20px;
+    }
+  .button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+.skills-title{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+  }
+
+.contacts-gif{
+        /* Full screen size */
+        width: 100vw;
+        height: 100vh;
+        /* Set the GIF as a background */
+        background-image: url('https://i.pinimg.com/originals/d4/81/f3/d481f3c72e283309071f79e01b05c06d.gif');
+        /* Cover the entire element size */
+        background-size: cover;
+        /* Center the background */
+        background-position: center;
+        /* No repeat if your GIF doesn't cover the whole element */
+        background-repeat: no-repeat;
+        /* Optional: add other styles to center the text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+    }
+.form-bg{
+    background: linear-gradient(-45deg, #4287f5, #5d949a, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
-
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
