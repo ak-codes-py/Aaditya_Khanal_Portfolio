@@ -32,6 +32,8 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var marqueeContainer = document.querySelector('.marquee-container');
     var marqueeContent = `
@@ -44,3 +46,4 @@ document.addEventListener('DOMContentLoaded', function () {
         </marquee>`;
     marqueeContainer.innerHTML = marqueeContent;
 });
+
