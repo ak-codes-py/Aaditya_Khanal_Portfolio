@@ -1,204 +1,389 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400&family=Montserrat&family=Open+Sans:wght@500&family=Quicksand:wght@300..700&family=Single+Day&display=swap');
-.bg-home{
-    background-image: url('https://cdn.dribbble.com/users/32512/screenshots/3629624/media/a0349d014539747dbf9506bfcafd3eb6.gif');
-    width: 100vw;
-    height: 129vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+/* Main Variables and Theme Colors */
+:root {
+    /* Modern, vibrant color palette */
+    --primary: #0891b2;
+    /* cyan-600 */
+    --primary-light: #22d3ee;
+    /* cyan-400 */
+    --secondary: #6366f1;
+    /* indigo-500 */
+    --accent: #f97316;
+    /* orange-500 */
+    --dark: #0f172a;
+    /* slate-900 */
+    --light: #f8fafc;
+    /* slate-50 */
+    --gray: #64748b;
+    /* slate-500 */
+    --gray-light: #e2e8f0;
+    /* slate-200 */
+
+    /* RGB values for gradients and transparencies */
+    --primary-rgb: 8, 145, 178;
+    --primary-light-rgb: 34, 211, 238;
+    --secondary-rgb: 99, 102, 241;
+    --accent-rgb: 249, 115, 22;
+
+    /* Animation speeds */
+    --transition-slow: 0.5s;
+    --transition-medium: 0.3s;
+    --transition-fast: 0.15s;
 }
-.icon-link {
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Account for fixed header */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Typography */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-medium) cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    border-radius: inherit;
+    background: linear-gradient(130deg,
+            rgba(var(--primary-rgb), 0.1) 0%,
+            rgba(var(--secondary-rgb), 0.1) 50%,
+            rgba(var(--accent-rgb), 0.1) 100%);
+    transition: opacity var(--transition-medium) ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card h3 {
     position: relative;
     display: inline-block;
-    width: 24px; 
-    height: 24px; 
-    overflow: visible;
 }
 
-.icon-link img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.title-head{
-    font-family: "IBM Plex Mono", monospace;
-}
-.icon-link::after {
-    content: attr(data-text);
+.card h3::after {
+    content: '';
     position: absolute;
-    top: 100%;
-    left: 50%; 
-    transform: translateX(-50%) translateY(200%);
-    white-space: nowrap; 
-    min-width: 24px; 
-    background-color: #0f82f5;
-    color: #fff;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0; 
-    text-align: center;
-    border-radius: 16px;
-    padding: 2px 10px;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: width var(--transition-medium) ease;
 }
 
-.icon-hover:hover .icon-link img {
-    transform: translateY(-200%); 
-    opacity: 0; 
+.card:hover h3::after {
+    width: 100%;
 }
 
-.icon-hover:hover .icon-link::after {
-    transform: translateX(-50%) translateY(0%); 
-    opacity: 1; 
+/* Ensure proper text contrast in cards */
+.card {
+    color: var(--dark);
 }
-.slider-container {
+
+.card .text-gray-600 {
+    color: #4b5563;
+}
+
+/* Skill Bubbles */
+.skill-bubble {
+    border-radius: 9999px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--dark);
+    transition: all var(--transition-medium) ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.5);
     position: relative;
     overflow: hidden;
-    height: 70vh;
-    border-radius: 0.5rem; /* Tailwind rounded equivalent */
+    z-index: 1;
 }
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
+
+.skill-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-medium) ease;
+    border-radius: inherit;
 }
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
+
+.skill-bubble:hover {
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-.slide img {
+
+.skill-bubble:hover::before {
+    opacity: 1;
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    border-left: 4px solid var(--primary);
+    overflow: hidden;
+    background-color: white;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem; /* Tailwind rounded equivalent */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Tailwind shadow-lg equivalent */
+    background: linear-gradient(to right, var(--primary-light), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-medium) ease;
 }
 
-
-.title-head h2 {
-    overflow: hidden;
-    border-right: .15em solid orange; /* The typewriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-        typing 4.5s steps(40, end),
-        blink-caret .80s step-end infinite;
+.project-card:hover::before {
+    opacity: 0.1;
 }
-.button {
-    font-family: 'Nunito', sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    font-weight: 700;
-    color: #313133;
-    background: #4FD1C5;
-  background: #44cf70;
-    border: none;
-    border-radius: 1000px;
-    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-    transition: all 0.3s ease-in-out 0s;
-    cursor: pointer;
-    outline: none;
+
+/* Timeline Items */
+.timeline-item {
     position: relative;
-    padding: 10px;
-    margin-top: 20px;
-    }
-  .button:hover, .button:focus {
-    color: #313133;
-    transform: translateY(-6px);
-  }
-  
-.skills-title{
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    font-weight: 700;
-    color: #313133;
-  }
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid var(--gray-light);
+}
 
-.contacts-gif{
-        /* Full screen size */
-        width: 100vw;
-        height: 100vh;
-        /* Set the GIF as a background */
-        background-image: url('https://i.pinimg.com/originals/d4/81/f3/d481f3c72e283309071f79e01b05c06d.gif');
-        /* Cover the entire element size */
-        background-size: cover;
-        /* Center the background */
-        background-position: center;
-        /* No repeat if your GIF doesn't cover the whole element */
-        background-repeat: no-repeat;
-        /* Optional: add other styles to center the text */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        font-size: 24px;
-    }
-.form-bg{
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 2px solid white;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    transition: color var(--transition-medium) ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width var(--transition-medium) ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+/* Updated Button Styling */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-medium) ease;
+    z-index: 1;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     color: white;
-    background: linear-gradient(-45deg, #4287f5, #5d949a, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-    border-radius: 30px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: none;
+    font-weight: 500;
 }
-.contact-intro{
-    background-image: url('https://img.freepik.com/free-vector/blurred-abstract-background_1107-166.jpg');
-    font-family: "IBM Plex Mono", monospace;
-}
-.button-send{
-    background-color: #333;
-    color: white;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 18px;
-    padding: 5px 20px;
-    border: 3px solid wheat;
-    border-radius: 30px;
 
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.announcement{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #4287f5;
-    padding: 40px;
-    width: 50%;
-    text-align: center;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-    border-radius: 20px;
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
 }
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+
+.btn:hover::before {
+    left: 100%;
 }
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+
+/* Fix for that masked text by ensuring no overflow */
+header+* {
+    clear: both;
+    padding-top: 80px;
+    /* Adjust based on navbar height */
 }
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+
+/* Mobile menu items with gradient on hover */
+#mobile-menu a {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    padding-left: 1rem;
 }
-@media (max-width: 600px) {
-    .slider-container {
-        width: 80vw;
-        height: 120vw; /* Increase height for smaller devices */
+
+#mobile-menu a:hover {
+    background: linear-gradient(to right, rgba(var(--primary-rgb), 0.1), transparent);
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5rem;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Styling */
+input,
+textarea {
+    transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2) !important;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-medium) ease;
+}
+
+#mobile-menu.show {
+    max-height: 300px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .skill-bubble {
+        margin-bottom: 0.5rem;
     }
 }
 
+/* Custom Selection Color */
+::selection {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Layout Fixes */
+.section {
+    padding: 4rem 0;
+}
+
+header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Fixing spacing in timeline items */
+.timeline-item:last-child {
+    padding-bottom: 0;
+    border-left: 2px solid transparent;
+}
+
+/* Fix content spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Add consistent section backgrounds */
+section:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+section:nth-child(odd) {
+    background-color: white;
+}

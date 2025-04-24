@@ -1,371 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaditya Khanal | Portfolio</title>
-    <!-- Font Awesome icons -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts - Using modern fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --cream: #fff5d9;
-            --red: #a11318;
-            --white: #ffffff;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 60px;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--cream);
-            color: #333;
-            line-height: 1.7;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-        
-        .text-primary {
-            color: var(--red) !important;
-        }
-        
-        .bg-primary {
-            background-color: var(--red) !important;
-        }
-        
-        .button {
-            background-color: var(--red);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 500;
-        }
-        
-        .button:hover {
-            background-color: #7d0f12;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(161, 19, 24, 0.3);
-        }
-        
-        /* Navigation */
-        .navbar {
-            background-color: var(--white);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--red);
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            color: #333;
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--red);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--red);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
-            background-color: var(--cream);
-        }
-        
-        .profile-image {
-            border-radius: 50%;
-            border: 5px solid var(--white);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-        }
-        
-        .profile-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(161, 19, 24, 0.2);
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-        }
-        
-        section:nth-child(odd) {
-            background-color: var(--white);
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--red);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        /* Experience & Education Cards */
-        .timeline-card {
-            border-left: 3px solid var(--red);
-            padding: 20px;
-            margin-bottom: 30px;
-            position: relative;
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: var(--red);
-            border-radius: 50%;
-            left: -9px;
-            top: 20px;
-        }
-        
-        .timeline-card .date {
-            color: var(--red);
-            font-weight: 500;
-        }
-        
-        /* Skills Section */
-        .skill-item {
-            text-align: center;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover .skill-icon {
-            transform: scale(1.1);
-        }
-        
-        .skill-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .skill-description {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* Interests */
-        .interests-container {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Awards */
-        .award-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .award-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .award-icon {
-            color: var(--red);
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--red);
-            color: var(--white);
-            padding: 40px 0;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--white);
-            color: var(--red);
-            border-radius: 50%;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
-            .hero-section {
-                text-align: center;
-            }
-            
-            .profile-image-container {
-                margin-bottom: 30px;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <title>Aaditya Khanal | Data Scientist & AI Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="min-h-screen overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">Aaditya Khanal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#interests">Interests</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#awards">Awards</a>
-                    </li>
-                </ul>
+    <header class="fixed w-full bg-white z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center py-4">
+    
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link font-medium">About</a>
+                    <a href="#experience" class="nav-link font-medium">Experience</a>
+                    <a href="#projects" class="nav-link font-medium">Projects</a>
+                    <a href="#skills" class="nav-link font-medium">Skills</a>
+                    <a href="#contact" class="nav-link font-medium">Contact</a>
+                </nav>
+    
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button"
+                    class="md:hidden flex items-center bg-gradient-to-r from-primary to-secondary text-black p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#about" class="block py-2 font-medium">About</a>
+                <a href="#experience" class="block py-2 font-medium">Experience</a>
+                <a href="#projects" class="block py-2 font-medium">Projects</a>
+                <a href="#skills" class="block py-2 font-medium">Skills</a>
+                <a href="#contact" class="block py-2 font-medium">Contact</a>
             </div>
         </div>
-    </nav>
-
+    </header>
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 profile-image-container text-center">
-                    <img src="./images/profile-image.png" alt="Aaditya Khanal" class="profile-image animate">
+    <section class="section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-gradient">Aaditya</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-700">
+                        Data Scientist & AI Developer
+                    </h2>
+                    <p class="text-lg mb-8 text-gray-600 max-w-lg">
+                        Transforming complex data into actionable insights and developing innovative AI solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="btn bg-primary text-white font-medium px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                            Get in Touch
+                        </a>
+                        <a href="#projects"
+                            class="btn border-2 border-primary text-primary font-medium px-6 py-3 rounded-lg hover:bg-primary hover:bg-opacity-10 transition-all">
+                            View My Work
+                        </a>
+                        <a href="Resume-Aaditya-Khanal.pdf" target="_blank"
+                            class="btn bg-accent text-white font-medium px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-8 hero-content">
-                    <h1 class="animate">Aaditya <span class="text-primary">Khanal</span></h1>
-                    <h3 class="animate">आदित्य खनाल</h3>
-                    <p class="animate">Major: Data Science | Northern Kentucky University</p>
-                    <p class="animate">I am on a journey to become a Data Scientist, driven by a deep desire to solve problems that have a real impact on product strategy and business outcomes. I see myself as a realist, firmly believing that when you blend practicality with high-quality data, Data Science becomes an incredibly powerful tool.</p>
-                    <div class="animate">
-                        <a href="#" download="/Resume_Aaditya_Khanal.pdf" class="button">Download Resume</a>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full opacity-20">
+                        </div>
+                        <img src="./images/IMG_0980.JPEG" alt="Profile Image"
+                            class="relative z-10 w-full h-full object-cover rounded-full p-2">
                     </div>
                 </div>
             </div>
@@ -373,22 +91,86 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="about-content">
-                        <p>As a passionate Data Science student at Northern Kentucky University, I blend analytical prowess with a drive for innovation. My journey in tech is marked by hands-on projects, from developing AI-driven applications like Khutruke AI to conducting research on behavioral dynamics using auction data.</p>
-                        <p>With a strong academic foundation and practical experience, including a first-place finish at the Fidelity/NKU Hackathon, I'm constantly pushing the boundaries of what's possible with data.</p>
-                        <p>My expertise spans Python, R, and JavaScript, with a focus on machine learning, data visualization, and web development. As a College of Informatics Ambassador and STEM Peer Mentor, I've honed my leadership and communication skills, bridging the gap between complex technical concepts and real-world applications.</p>
-                        <p>Driven by a curiosity for emerging technologies like RAG chatbots, Generative AI, and AGI, I'm committed to leveraging data science to solve real-world problems. My international background brings a unique global perspective to my work, fostering innovative solutions and inclusive collaboration.</p>
-                        
-                        <div class="contact-info mt-4">
-                            <p><i class="fas fa-map-marker-alt text-primary me-2"></i> 207 Meadow Trail Dr, Highland Heights, KY</p>
-                            <p><i class="fas fa-phone text-primary me-2"></i> (859) 628-1641</p>
-                            <p><i class="fas fa-envelope text-primary me-2"></i> <a href="mailto:khanal.aditya1122@gmail.com">khanal.aditya1122@gmail.com</a></p>
+    <section id="about" class="section py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Who I Am</h3>
+                    <p class="mb-4 text-gray-700">
+                        I'm a Data Science student at Northern Kentucky University with a strong foundation in AI
+                        development, data analysis, and machine learning. Passionate about extracting meaningful
+                        insights from complex datasets and building innovative AI solutions.
+                    </p>
+                    <p class="mb-6 text-gray-700">
+                        With experience in research and professional environments, I combine technical expertise with
+                        analytical thinking to solve challenging problems in the data science and AI space.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span class="ml-2 font-medium">Data Science B.S.</span>
                         </div>
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <span class="ml-2 font-medium">3.82 GPA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <span class="ml-2 font-medium">Multiple Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-6 text-primary">Education</h3>
+                        <div class="mb-6">
+                            <h4 class="font-medium text-lg">Northern Kentucky University</h4>
+                            <p class="text-gray-600">Bachelor of Science, Data Science with Business
+                                Analytics</p>
+                            <p class="text-gray-600">Minor: Applied Statistics</p>
+                            <p class="text-gray-600">August 2022 – May 2026</p>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-6 text-primary">Certifications</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-medium">Fundamentals of Deep Learning (NVIDIA)</p>
+                                    <p class="text-sm text-gray-600">March 2025</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-medium">Oracle Cloud Infrastructure 2024 Generative AI Certified
+                                        Professional</p>
+                                    <p class="text-sm text-gray-600">July 2024</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-medium">Microsoft Azure AI Fundamentals Certification</p>
+                                    <p class="text-sm text-gray-600">June 2024</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -396,51 +178,237 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="timeline-card">
-                        <h3>Data Analyst Externship</h3>
-                        <h4>Beats by Dre</h4>
-                        <p class="date">October 2024 - November 2024</p>
-                        <p>• Utilized Python libraries such as pandas, NumPy, scikit-learn, Seaborn, and NLTK for efficient data cleaning, processing, of
-1000 reviews each from 10 different headphone products.<br>
-• Implemented product sentiment analysis and Gemini AI to extract actionable insights and enhance operational strategies.</p>
+    <section id="experience" class="section py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Professional Experience</h2>
+            <div class="space-y-8 fade-in">
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Consumer Insights Data Analyst</h3>
+                                <p class="text-primary font-medium">Beats By Dre Externship</p>
+                            </div>
+                            <p class="text-gray-600 mt-2 md:mt-0">Sept 2024 – Oct 2024</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Utilized Python libraries such as pandas, NumPy, scikit-learn, Seaborn,
+                                    and NLTK for efficient data cleaning and processing of 100 thousand reviews each
+                                    from 10 different headphone products.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Implemented product sentiment analysis and Gemini 1.5 pro to extract
+                                    actionable insights and enhance operational strategies.</p>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <div class="timeline-card">
-                        <h3>Student Researcher</h3>
-                        <h4>Human Computer Interaction Lab at NKU</h4>
-                        <p class="date">December 2023 - </p>
-                        <p>• Analyzing behavioral dynamics using auction data to develop insights on participant decision-making processes.<br>
-                        • Implementing statistical models and data visualization techniques to identify patterns and trends in research data.<br>
-                        • Collaborating with faculty and fellow researchers to present findings and develop research methodologies.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Student Researcher</h3>
+                                <p class="text-primary font-medium">Human Computer Interaction Lab at NKU</p>
+                            </div>
+                            <p class="text-gray-600 mt-2 md:mt-0">Dec 2023 – Jul 2024</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Conducted comprehensive data analysis on a complex auction dataset of
+                                    27.2 million users using Python, R, SQL Server, and JavaScript.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Analyzed human behavioral patterns and published findings at the MiPro
+                                    47th IEEE ICT and Electronics Convention in Croatia. Additionally, presented
+                                    research at various events, including Poster at Capitol and NKU Research
+                                    Celebration.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Vice President</h3>
+                                <p class="text-primary font-medium">Data Science Club, Northern Kentucky University</p>
+                            </div>
+                            <p class="text-gray-600 mt-2 md:mt-0">May 2024 – Present</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Co-founded Data Science Club, organizing virtual hackathon with 100+
+                                    participants and securing industry speaker from AT&T.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
+                                    <i class="fas fa-caret-right"></i>
+                                </div>
+                                <p class="ml-3">Represented NKU at University of Cincinnati's Data Science Symposium,
+                                    developed student project showcase platform, and mentored peers in STEM initiatives.
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="timeline-card">
-                        <h3>Northern Kentucky University</h3>
-                        <h4>Bachelor of Science in Data Science</h4>
-                        <p class="date">August 2022 - May 2026</p>
-                        <p>Applied Statistics and Business Track<br>GPA: 3.82</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card fade-in">
+                    <div
+                        class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-heartbeat"></i>
                     </div>
-                    
-                    <div class="timeline-card">
-                        <h3>St. Xaviers College, Maitighar</h3>
-                        <h4>A LEVELS</h4>
-                        <p class="date">June 2019 - August 2021</p>
-                        <p>Coursework: Physics, Chemistry, Computer Science, English, Mathematics</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Colorectal Cancer Prediction</h3>
+                        <p class="text-gray-600 mb-4">
+                            End-to-end MLOps pipeline for cancer risk prediction using Docker, PyTorch, MLflow, and
+                            Kubeflow.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">PyTorch</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">MLflow</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Docker</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Kubeflow</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div
+                        class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Bargain Radar</h3>
+                        <p class="text-gray-600 mb-4">
+                            AI agent using OpenAI Frontier API, Hugging Face, LangChain, and Chroma vector database for
+                            price predictions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">OpenAI</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Hugging
+                                Face</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">LangChain</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Vector
+                                DB</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div
+                        class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Campus GPT</h3>
+                        <p class="text-gray-600 mb-4">
+                            Multimodal RAG QA agent for university using FireCrawler, LangChain, and Google Gemini 2.5
+                            Pro.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">LangChain</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Gemini
+                                2.5</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">RAG</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">FireCrawler</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div
+                        class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-5xl">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Tube2Text Agent</h3>
+                        <p class="text-gray-600 mb-4">
+                            AI agent using CrewAI and Gemini 2.5 Flash to transcribe YouTube videos and generate
+                            SEO-optimized blog posts.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">CrewAI</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Gemini
+                                2.5</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">SEO</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Content
+                                Gen</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div
+                        class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center text-white text-5xl">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Khutruke AI (Hackathon Winner)</h3>
+                        <p class="text-gray-600 mb-4">
+                            MERN-stack chatbot web app using OpenAI's GPT-4 API for personalized financial planning.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">MERN</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">GPT-4</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">FinTech</span>
+                            <span
+                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Chatbot</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -448,227 +416,199 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg" alt="Python" class="skill-icon">
-                        <h4 class="skill-name">Python</h4>
-                        <p class="skill-description">Data Analysis, Automation, Machine Learning</p>
+    <section id="skills" class="section py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Skills & Technologies</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">Python</div>
+                        <div class="skill-bubble">R</div>
+                        <div class="skill-bubble">Java</div>
+                        <div class="skill-bubble">JavaScript</div>
+                        <div class="skill-bubble">SQL</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Programming" class="skill-icon">
-                        <h4 class="skill-name">R Programming</h4>
-                        <p class="skill-description">Statistical Analysis, Model Testing, Visualizations</p>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">Machine Learning & AI</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">PyTorch</div>
+                        <div class="skill-bubble">TensorFlow</div>
+                        <div class="skill-bubble">Scikit-learn</div>
+                        <div class="skill-bubble">LangChain</div>
+                        <div class="skill-bubble">LangGraph</div>
+                        <div class="skill-bubble">Hugging Face</div>
+                        <div class="skill-bubble">RAG/CAG</div>
+                        <div class="skill-bubble">OpenAI</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://download.logo.wine/logo/PostgreSQL/PostgreSQL-Logo.wine.png" alt="SQL" class="skill-icon">
-                        <h4 class="skill-name">SQL</h4>
-                        <p class="skill-description">Store, Manage, Integrate databases</p>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">Data Tools & Libraries</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">NumPy</div>
+                        <div class="skill-bubble">Pandas</div>
+                        <div class="skill-bubble">Matplotlib</div>
+                        <div class="skill-bubble">PySpark</div>
+                        <div class="skill-bubble">Power BI</div>
+                        <div class="skill-bubble">Kafka</div>
+                        <div class="skill-bubble">DeltaLake</div>
+                        <div class="skill-bubble">ETL/ELT</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript" class="skill-icon">
-                        <h4 class="skill-name">JavaScript</h4>
-                        <p class="skill-description">Web Design, Web Application</p>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">Cloud & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">AWS</div>
+                        <div class="skill-bubble">Azure</div>
+                        <div class="skill-bubble">GCP</div>
+                        <div class="skill-bubble">Docker</div>
+                        <div class="skill-bubble">Kubernetes</div>
+                        <div class="skill-bubble">Git</div>
+                        <div class="skill-bubble">GitHub Actions</div>
+                        <div class="skill-bubble">CircleCI</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://cdn.worldvectorlogo.com/logos/java-14.svg" alt="Java" class="skill-icon">
-                        <h4 class="skill-name">Java</h4>
-                        <p class="skill-description">Applications, Software Design</p>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">MS SQL Server</div>
+                        <div class="skill-bubble">PostgreSQL</div>
+                        <div class="skill-bubble">MySQL</div>
+                        <div class="skill-bubble">MongoDB</div>
+                        <div class="skill-bubble">Pinecone</div>
+                        <div class="skill-bubble">Firebase</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" class="skill-icon">
-                        <h4 class="skill-name">GitHub/Git</h4>
-                        <p class="skill-description">Version Control, Workflow</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://partner.zoom.us/wp-content/uploads/2022/12/2022_Zoom-AWS_Lockup_RGB-1-e1672857797889-1024x760.png" alt="AWS" class="skill-icon">
-                        <h4 class="skill-name">Amazon SageMaker</h4>
-                        <p class="skill-description">MLOps, Data Engineering</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="skill-item">
-                        <img src="https://logowik.com/content/uploads/images/azure-machine-learning-service1395.jpg" alt="Azure" class="skill-icon">
-                        <h4 class="skill-name">Azure ML Studio</h4>
-                        <p class="skill-description">Machine Learning, Model Training</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="workflow-skills mt-5">
-                <h3 class="mb-4">Workflow</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-primary me-2"></i> Data Ingestion and Wrangling</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> Data Analysis and Visualization</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> Data pipeline design</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-primary me-2"></i> ML Models Training/Deployment</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> RAG based chatbots development</li>
-                        </ul>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-6 text-primary">MLOps & Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-bubble">MLflow</div>
+                        <div class="skill-bubble">DVC</div>
+                        <div class="skill-bubble">Airflow</div>
+                        <div class="skill-bubble">Jenkins</div>
+                        <div class="skill-bubble">Flask</div>
+                        <div class="skill-bubble">Azure Fabric</div>
+                        <div class="skill-bubble">LangSmith</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interests Section -->
-    <section id="interests">
-        <div class="container">
-            <h2 class="section-title">Interests</h2>
-            <div class="interests-container">
-                <p>I'm all about staying active and exploring new places. Hitting the gym keeps me feeling good and ready for whatever comes my way. On weekends, you'll probably find me out on the water, paddling my kayak and soaking up the scenery. When I'm not doing that, I love planning my next trip - there's always somewhere new to discover. Whether it's a tough workout, a challenging river, or an off-the-beaten-path destination, I'm always up for pushing myself and trying new things.</p>
-                <p class="mb-0">When forced indoors, I follow a number of thriller/mystery and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section id="awards">
-        <div class="container">
-            <h2 class="section-title">Awards & Certifications</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-trophy"></i>
+<!-- Contact Section -->
+<section id="contact" class="section py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-12 text-center fade-in">Get In Touch</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="fade-in">
+                <h3 class="text-xl font-semibold mb-6 text-primary">Let's Connect</h3>
+                <p class="mb-6 text-gray-700">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
+                            <i class="fas fa-envelope text-black"></i>
                         </div>
-                        <div>
-                            <h4>Fidelity Hackathon Winner, 1st Place</h4>
-                        </div>
+                        <a href="mailto:khanal.aditya1122@gmail.com"
+                            class="ml-3 hover:text-primary transition-colors">khanal.aditya1122@gmail.com</a>
                     </div>
-                    
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-certificate"></i>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
+                            <i class="fas fa-phone text-black"></i>
                         </div>
-                        <div>
-                            <h4>Microsoft Certified: Azure AI Fundamentals</h4>
-                        </div>
+                        <a href="tel:859-628-1641" class="ml-3 hover:text-primary transition-colors">859-628-1641</a>
                     </div>
-                    
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-certificate"></i>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
+                            <i class="fab fa-linkedin-in text-black"></i>
                         </div>
-                        <div>
-                            <h4>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h4>
-                        </div>
+                        <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank"
+                            class="ml-3 hover:text-primary transition-colors">linkedin.com/in/-khanalaaditya/</a>
                     </div>
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-certificate"></i>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
+                            <i class="fab fa-github text-black"></i>
                         </div>
-                        <div>
-                            <h4>Fundamentals of Deep Learning, NVIDIA</h4>
+                        <a href="https://github.com/ak-pydev" target="_blank"
+                            class="ml-3 hover:text-primary transition-colors">github.com/ak-pydev</a>
+                    </div>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
+                            <i class="fas fa-map-marker-alt text-black"></i>
                         </div>
+                        <span class="ml-3 text-gray-700">Highland Heights, Kentucky</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <p>© 2024 Aaditya Khanal. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end">
-                    <a href="https://www.linkedin.com/in/-khanalaaditya/" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/ak-codes-py" target="_blank" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.facebook.com/aaditya.khanal.12/" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="discordapp/724311203408642050" class="social-icon">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://thegrtnepalidiaspora.slack.com/team/U06JP5NHTT2" target="_blank" class="social-icon">
-                        <i class="fab fa-slack"></i>
-                    </a>
-                </div>
+            <div class="fade-in">
+                <form class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn py-3 rounded-lg">
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</section>
     
-    <!-- Custom JS -->
-    <script>
-        // Highlight active navigation item when scrolling
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (pageYOffset >= (sectionTop - 150)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-            
-            // Animation on scroll
-            const animateElements = document.querySelectorAll('.timeline-card, .skill-item, .award-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animateElements.forEach(element => {
-                observer.observe(element);
-                // Initially hide elements that will be animated
-                element.style.opacity = '0';
-            });
-        });
-    </script>
+<!-- Footer -->
+<footer class="py-8 bg-gray-900 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 Aaditya Khanal. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank"
+                    class="hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/ak-pydev" target="_blank" class="hover:text-primary transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:khanal.aditya1122@gmail.com" class="hover:text-primary transition-colors">
+                    <i class="fas fa-envelope mr-14"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
+
 </html>
