@@ -6,171 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aaditya Khanal | Data Scientist & AI Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="min-h-screen overflow-x-hidden">
+<body>
     <!-- Navigation -->
-    <header class="fixed w-full bg-white z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-center items-center py-4">
-    
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="nav-link font-medium">About</a>
-                    <a href="#experience" class="nav-link font-medium">Experience</a>
-                    <a href="#projects" class="nav-link font-medium">Projects</a>
-                    <a href="#skills" class="nav-link font-medium">Skills</a>
-                    <a href="#contact" class="nav-link font-medium">Contact</a>
+    <header id="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-text"><span>Aaditya</span><span class="logo-dot"></span></div>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                    </ul>
+                    <a href="#contact" class="contact-btn">Contact Me</a>
                 </nav>
-    
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button"
-                    class="md:hidden flex items-center bg-gradient-to-r from-primary to-secondary text-black p-2 rounded-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-                    </svg>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
-    
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <a href="#about" class="block py-2 font-medium">About</a>
-                <a href="#experience" class="block py-2 font-medium">Experience</a>
-                <a href="#projects" class="block py-2 font-medium">Projects</a>
-                <a href="#skills" class="block py-2 font-medium">Skills</a>
-                <a href="#contact" class="block py-2 font-medium">Contact</a>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#experience" class="mobile-nav-link">Experience</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#skills" class="mobile-nav-link">Skills</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
             </div>
         </div>
     </header>
+
     <!-- Hero Section -->
-    <section class="section pt-24 pb-16 md:pt-32 md:pb-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                        Hi, I'm <span class="text-gradient">Aaditya</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-700">
-                        Data Scientist & AI Developer
-                    </h2>
-                    <p class="text-lg mb-8 text-gray-600 max-w-lg">
+    <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-subtitle">Data Scientist & AI Developer</div>
+                    <h1 class="hero-title">Hi, I'm <span class="gradient-text">Aaditya</span></h1>
+                    <p class="hero-description">
                         Transforming complex data into actionable insights and developing innovative AI solutions.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact"
-                            class="btn bg-primary text-white font-medium px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
-                            Get in Touch
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
                         </a>
-                        <a href="#projects"
-                            class="btn border-2 border-primary text-primary font-medium px-6 py-3 rounded-lg hover:bg-primary hover:bg-opacity-10 transition-all">
-                            View My Work
-                        </a>
-                        <a href="Resume-Aaditya-Khanal.pdf" target="_blank"
-                            class="btn bg-accent text-white font-medium px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
-                            <i class="fas fa-download mr-2"></i> Download Resume
+                        <a href="https://github.com/ak-pydev" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full opacity-20">
-                        </div>
-                        <img src="./images/IMG_0980.JPEG" alt="Profile Image"
-                            class="relative z-10 w-full h-full object-cover rounded-full p-2">
-                    </div>
+                <div class="profile-image-container">
+                    <div class="profile-shape"></div>
+                    <img src="./images/IMG_0980.JPEG" alt="Aaditya Khanal" class="profile-image">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center fade-in">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h3 class="text-xl font-semibold mb-4 text-primary">Who I Am</h3>
-                    <p class="mb-4 text-gray-700">
+    <section class="section section-dark" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span>Me</span></h2>
+                <p class="section-subtitle">
+                    Learn more about my background, education, and what drives me to create innovative solutions in
+                    data science and AI development.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who I Am</h3>
+                    <p>
                         I'm a Data Science student at Northern Kentucky University with a strong foundation in AI
                         development, data analysis, and machine learning. Passionate about extracting meaningful
                         insights from complex datasets and building innovative AI solutions.
                     </p>
-                    <p class="mb-6 text-gray-700">
+                    <p>
                         With experience in research and professional environments, I combine technical expertise with
                         analytical thinking to solve challenging problems in the data science and AI space.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center">
-                            <div
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span class="ml-2 font-medium">Data Science B.S.</span>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3.82</div>
+                            <div class="stat-label">GPA</div>
                         </div>
-                        <div class="flex items-center">
-                            <div
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <span class="ml-2 font-medium">3.82 GPA</span>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Projects</div>
                         </div>
-                        <div class="flex items-center">
-                            <div
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <span class="ml-2 font-medium">Multiple Certifications</span>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Certifications</div>
                         </div>
                     </div>
                 </div>
-                <div class="fade-in">
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold mb-6 text-primary">Education</h3>
-                        <div class="mb-6">
-                            <h4 class="font-medium text-lg">Northern Kentucky University</h4>
-                            <p class="text-gray-600">Bachelor of Science, Data Science with Business
-                                Analytics</p>
-                            <p class="text-gray-600">Minor: Applied Statistics</p>
-                            <p class="text-gray-600">August 2022 – May 2026</p>
+                <div class="education-card">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>Northern Kentucky University</h4>
+                        <p>Bachelor of Science, Data Science with Business Analytics</p>
+                        <p>Minor: Applied Statistics</p>
+                        <p class="date">August 2022 – May 2026</p>
+                    </div>
+                    <div class="certifications">
+                        <h3>Certifications</h3>
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h5>Fundamentals of Deep Learning (NVIDIA)</h5>
+                                <p>March 2025</p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-6 text-primary">Certifications</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="font-medium">Fundamentals of Deep Learning (NVIDIA)</p>
-                                    <p class="text-sm text-gray-600">March 2025</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="font-medium">Oracle Cloud Infrastructure 2024 Generative AI Certified
-                                        Professional</p>
-                                    <p class="text-sm text-gray-600">July 2024</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="font-medium">Microsoft Azure AI Fundamentals Certification</p>
-                                    <p class="text-sm text-gray-600">June 2024</p>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h5>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h5>
+                                <p>July 2024</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h5>Microsoft Azure AI Fundamentals Certification</h5>
+                                <p>June 2024</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -178,95 +160,53 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Professional Experience</h2>
-            <div class="space-y-8 fade-in">
+    <section class="section section-darker" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work <span>Experience</span></h2>
+                <p class="section-subtitle">
+                    My professional journey and key roles that have shaped my career in data science and AI development.
+                </p>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+
                 <div class="timeline-item">
-                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-semibold">Consumer Insights Data Analyst</h3>
-                                <p class="text-primary font-medium">Beats By Dre Externship</p>
-                            </div>
-                            <p class="text-gray-600 mt-2 md:mt-0">Sept 2024 – Oct 2024</p>
-                        </div>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Utilized Python libraries such as pandas, NumPy, scikit-learn, Seaborn,
-                                    and NLTK for efficient data cleaning and processing of 100 thousand reviews each
-                                    from 10 different headphone products.</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Implemented product sentiment analysis and Gemini 1.5 pro to extract
-                                    actionable insights and enhance operational strategies.</p>
-                            </li>
-                        </ul>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sept 2024 – Oct 2024</div>
+                        <h3 class="timeline-title">Consumer Insights Data Analyst</h3>
+                        <div class="timeline-company">Beats By Dre Externship</div>
+                        <p class="timeline-description">
+                            Utilized Python libraries for data cleaning and processing of 100,000+ reviews. Implemented
+                            product sentiment analysis with Gemini 1.5 pro to extract actionable insights.
+                        </p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-semibold">Student Researcher</h3>
-                                <p class="text-primary font-medium">Human Computer Interaction Lab at NKU</p>
-                            </div>
-                            <p class="text-gray-600 mt-2 md:mt-0">Dec 2023 – Jul 2024</p>
-                        </div>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Conducted comprehensive data analysis on a complex auction dataset of
-                                    27.2 million users using Python, R, SQL Server, and JavaScript.</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Analyzed human behavioral patterns and published findings at the MiPro
-                                    47th IEEE ICT and Electronics Convention in Croatia. Additionally, presented
-                                    research at various events, including Poster at Capitol and NKU Research
-                                    Celebration.</p>
-                            </li>
-                        </ul>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2023 – Jul 2024</div>
+                        <h3 class="timeline-title">Student Researcher</h3>
+                        <div class="timeline-company">Human Computer Interaction Lab at NKU</div>
+                        <p class="timeline-description">
+                            Conducted comprehensive data analysis on a complex auction dataset of 27.2 million users.
+                            Published findings at the MiPro 47th IEEE ICT and Electronics Convention.
+                        </p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="bg-white p-6 rounded-xl shadow-lg project-card">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-semibold">Vice President</h3>
-                                <p class="text-primary font-medium">Data Science Club, Northern Kentucky University</p>
-                            </div>
-                            <p class="text-gray-600 mt-2 md:mt-0">May 2024 – Present</p>
-                        </div>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Co-founded Data Science Club, organizing virtual hackathon with 100+
-                                    participants and securing industry speaker from AT&T.</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 w-5 h-5 mt-1 text-accent">
-                                    <i class="fas fa-caret-right"></i>
-                                </div>
-                                <p class="ml-3">Represented NKU at University of Cincinnati's Data Science Symposium,
-                                    developed student project showcase platform, and mentored peers in STEM initiatives.
-                                </p>
-                            </li>
-                        </ul>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024 – Present</div>
+                        <h3 class="timeline-title">Vice President</h3>
+                        <div class="timeline-company">Data Science Club, Northern Kentucky University</div>
+                        <p class="timeline-description">
+                            Co-founded Data Science Club, organizing virtual hackathon with 100+ participants.
+                            Represented NKU at University of Cincinnati's Data Science Symposium.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -274,140 +214,130 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card fade-in">
-                    <div
-                        class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-5xl">
-                        <i class="fas fa-heartbeat"></i>
+    <section class="section section-dark" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span>Projects</span></h2>
+                <p class="section-subtitle">
+                    Explore some of my recent work in data science, machine learning, and AI development.
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Colorectal Cancer Prediction</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="project-content">
+                        <h3 class="project-title">Colorectal Cancer Prediction</h3>
+                        <p class="project-description">
                             End-to-end MLOps pipeline for cancer risk prediction using Docker, PyTorch, MLflow, and
                             Kubeflow.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">PyTorch</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">MLflow</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Docker</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Kubeflow</span>
+                        <div class="project-tags">
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">MLflow</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Kubeflow</span>
                         </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="card fade-in">
-                    <div
-                        class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center text-white text-5xl">
-                        <i class="fas fa-tags"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Bargain Radar</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="project-content">
+                        <h3 class="project-title">Bargain Radar</h3>
+                        <p class="project-description">
                             AI agent using OpenAI Frontier API, Hugging Face, LangChain, and Chroma vector database for
                             price predictions.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">OpenAI</span>
-                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Hugging
-                                Face</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">LangChain</span>
-                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Vector
-                                DB</span>
+                        <div class="project-tags">
+                            <span class="project-tag">OpenAI</span>
+                            <span class="project-tag">Hugging Face</span>
+                            <span class="project-tag">LangChain</span>
+                            <span class="project-tag">Vector DB</span>
                         </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="card fade-in">
-                    <div
-                        class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center text-white text-5xl">
-                        <i class="fas fa-university"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Campus GPT</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="project-content">
+                        <h3 class="project-title">Campus GPT</h3>
+                        <p class="project-description">
                             Multimodal RAG QA agent for university using FireCrawler, LangChain, and Google Gemini 2.5
                             Pro.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">LangChain</span>
-                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Gemini
-                                2.5</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">RAG</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">FireCrawler</span>
+                        <div class="project-tags">
+                            <span class="project-tag">LangChain</span>
+                            <span class="project-tag">Gemini 2.5</span>
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">FireCrawler</span>
                         </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="card fade-in">
-                    <div
-                        class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-5xl">
-                        <i class="fab fa-youtube"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Tube2Text Agent</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="project-content">
+                        <h3 class="project-title">Tube2Text Agent</h3>
+                        <p class="project-description">
                             AI agent using CrewAI and Gemini 2.5 Flash to transcribe YouTube videos and generate
                             SEO-optimized blog posts.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">CrewAI</span>
-                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Gemini
-                                2.5</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">SEO</span>
-                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Content
-                                Gen</span>
+                        <div class="project-tags">
+                            <span class="project-tag">CrewAI</span>
+                            <span class="project-tag">Gemini 2.5</span>
+                            <span class="project-tag">SEO</span>
+                            <span class="project-tag">Content Gen</span>
                         </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="card fade-in">
-                    <div
-                        class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center text-white text-5xl">
-                        <i class="fas fa-money-bill-wave"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Khutruke AI (Hackathon Winner)</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="project-content">
+                        <h3 class="project-title">Khutruke AI (Hackathon Winner)</h3>
+                        <p class="project-description">
                             MERN-stack chatbot web app using OpenAI's GPT-4 API for personalized financial planning.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">MERN</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">GPT-4</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">FinTech</span>
-                            <span
-                                class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full">Chatbot</span>
+                        <div class="project-tags">
+                            <span class="project-tag">MERN</span>
+                            <span class="project-tag">GPT-4</span>
+                            <span class="project-tag">FinTech</span>
+                            <span class="project-tag">Chatbot</span>
                         </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -416,199 +346,191 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Skills & Technologies</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">Python</div>
-                        <div class="skill-bubble">R</div>
-                        <div class="skill-bubble">Java</div>
-                        <div class="skill-bubble">JavaScript</div>
-                        <div class="skill-bubble">SQL</div>
+    <section class="section section-darker" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span>Skills</span></h2>
+                <p class="section-subtitle">
+                    Technologies and tools I've mastered throughout my journey in data science and AI development.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">R</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">SQL</div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">Machine Learning & AI</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">PyTorch</div>
-                        <div class="skill-bubble">TensorFlow</div>
-                        <div class="skill-bubble">Scikit-learn</div>
-                        <div class="skill-bubble">LangChain</div>
-                        <div class="skill-bubble">LangGraph</div>
-                        <div class="skill-bubble">Hugging Face</div>
-                        <div class="skill-bubble">RAG/CAG</div>
-                        <div class="skill-bubble">OpenAI</div>
+                <div class="skills-category">
+                    <h3 class="category-title">Machine Learning & AI</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">PyTorch</div>
+                        <div class="skill-item">TensorFlow</div>
+                        <div class="skill-item">Scikit-learn</div>
+                        <div class="skill-item">LangChain</div>
+                        <div class="skill-item">LangGraph</div>
+                        <div class="skill-item">Hugging Face</div>
+                        <div class="skill-item">RAG/CAG</div>
+                        <div class="skill-item">OpenAI</div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">Data Tools & Libraries</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">NumPy</div>
-                        <div class="skill-bubble">Pandas</div>
-                        <div class="skill-bubble">Matplotlib</div>
-                        <div class="skill-bubble">PySpark</div>
-                        <div class="skill-bubble">Power BI</div>
-                        <div class="skill-bubble">Kafka</div>
-                        <div class="skill-bubble">DeltaLake</div>
-                        <div class="skill-bubble">ETL/ELT</div>
+                <div class="skills-category">
+                    <h3 class="category-title">Data Tools & Libraries</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">NumPy</div>
+                        <div class="skill-item">Pandas</div>
+                        <div class="skill-item">Matplotlib</div>
+                        <div class="skill-item">PySpark</div>
+                        <div class="skill-item">Power BI</div>
+                        <div class="skill-item">Kafka</div>
+                        <div class="skill-item">DeltaLake</div>
+                        <div class="skill-item">ETL/ELT</div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">Cloud & DevOps</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">AWS</div>
-                        <div class="skill-bubble">Azure</div>
-                        <div class="skill-bubble">GCP</div>
-                        <div class="skill-bubble">Docker</div>
-                        <div class="skill-bubble">Kubernetes</div>
-                        <div class="skill-bubble">Git</div>
-                        <div class="skill-bubble">GitHub Actions</div>
-                        <div class="skill-bubble">CircleCI</div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">Databases</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">MS SQL Server</div>
-                        <div class="skill-bubble">PostgreSQL</div>
-                        <div class="skill-bubble">MySQL</div>
-                        <div class="skill-bubble">MongoDB</div>
-                        <div class="skill-bubble">Pinecone</div>
-                        <div class="skill-bubble">Firebase</div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-6 text-primary">MLOps & Tools</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-bubble">MLflow</div>
-                        <div class="skill-bubble">DVC</div>
-                        <div class="skill-bubble">Airflow</div>
-                        <div class="skill-bubble">Jenkins</div>
-                        <div class="skill-bubble">Flask</div>
-                        <div class="skill-bubble">Azure Fabric</div>
-                        <div class="skill-bubble">LangSmith</div>
+                <div class="skills-category">
+                    <h3 class="category-title">Cloud & DevOps</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Azure</div>
+                        <div class="skill-item">GCP</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Kubernetes</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">GitHub Actions</div>
+                        <div class="skill-item">CircleCI</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section py-16 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-12 text-center fade-in">Get In Touch</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="fade-in">
-                <h3 class="text-xl font-semibold mb-6 text-primary">Let's Connect</h3>
-                <p class="mb-6 text-gray-700">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
-                    vision.
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <p class="section-subtitle">
+                    Interested in working together? Feel free to reach out to discuss opportunities, collaborations, or
+                    just to say hello.
                 </p>
-                <div class="space-y-4">
-                    <div class="flex items-center">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
-                            <i class="fas fa-envelope text-black"></i>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        vision.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <a href="mailto:khanal.aditya1122@gmail.com">khanal.aditya1122@gmail.com</a>
+                            </div>
                         </div>
-                        <a href="mailto:khanal.aditya1122@gmail.com"
-                            class="ml-3 hover:text-primary transition-colors">khanal.aditya1122@gmail.com</a>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <a href="tel:859-628-1641">859-628-1641</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                Highland Heights, Kentucky
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
-                            <i class="fas fa-phone text-black"></i>
-                        </div>
-                        <a href="tel:859-628-1641" class="ml-3 hover:text-primary transition-colors">859-628-1641</a>
-                    </div>
-                    <div class="flex items-center">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
-                            <i class="fab fa-linkedin-in text-black"></i>
-                        </div>
-                        <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank"
-                            class="ml-3 hover:text-primary transition-colors">linkedin.com/in/-khanalaaditya/</a>
-                    </div>
-                    <div class="flex items-center">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
-                            <i class="fab fa-github text-black"></i>
-                        </div>
-                        <a href="https://github.com/ak-pydev" target="_blank"
-                            class="ml-3 hover:text-primary transition-colors">github.com/ak-pydev</a>
-                    </div>
-                    <div class="flex items-center">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white">
-                            <i class="fas fa-map-marker-alt text-black"></i>
-                        </div>
-                        <span class="ml-3 text-gray-700">Highland Heights, Kentucky</span>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/ak-pydev" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="fade-in">
-                <form class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                        <input type="text" id="name" name="name"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
-                        <input type="email" id="email" name="email"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="mb-4">
-                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="w-full btn py-3 rounded-lg">
-                        Send Message
-                    </button>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
-    </div>
-</section>
-    
-<!-- Footer -->
-<footer class="py-8 bg-gray-900 text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <div class="logo-text"><span>Aaditya</span><span class="logo-dot"></span></div>
+                    </div>
+                    <p class="footer-description">
+                        Data Scientist & AI Developer transforming complex data into actionable insights.
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#about">About</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/ak-pydev" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:khanal.aditya1122@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2025 Aaditya Khanal. All rights reserved.</p>
             </div>
-            <div class="flex space-x-4">
-                <a href="https://linkedin.com/in/-khanalaaditya/" target="_blank"
-                    class="hover:text-primary transition-colors">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/ak-pydev" target="_blank" class="hover:text-primary transition-colors">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:khanal.aditya1122@gmail.com" class="hover:text-primary transition-colors">
-                    <i class="fas fa-envelope mr-14"></i>
-                </a>
-            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
